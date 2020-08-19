@@ -1,0 +1,18 @@
+Problem:-
+
+Given the Employee table, write a SQL query that finds out employees who earn more than their managers. For the above table, Joe is the only employee who earns more than his manager.
+
++----------+
+| Employee |
++----------+
+| Joe      |
++----------+
+
+Query;-
+
+SELECT E.Name 
+AS Employee 
+FROM Employee E
+LEFT JOIN Employee M
+on E.ManagerId = M.Id
+WHERE E.Salary > M.Salary;
